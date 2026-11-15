@@ -1,0 +1,25 @@
+---
+const tecnologias = [
+  "Astro", "React", "Node.js", "C# / .NET", "SQL Server", "PostgreSQL",
+  "AWS", "Docker", "Git / GitHub", "APIs REST",
+];
+---
+
+<section id="tecnologias" class="scroll-mt-20 border-y border-white/10 bg-[#0b1530]">
+  <div class="mx-auto max-w-7xl px-6 py-20">
+    <div class="reveal mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+        Tecnologías con las que trabajamos
+      </h2>
+      <p class="mt-4 text-slate-400">Herramientas modernas y probadas, elegidas según lo que tu proyecto necesita.</p>
+    </div>
+
+    <ul class="reveal mt-12 flex flex-wrap justify-center gap-3">
+      {tecnologias.map((t) => (
+        <li class="rounded-xl border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-bold text-slate-200 transition hover:border-[#4687ff]/60 hover:text-white">
+          {t}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

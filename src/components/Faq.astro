@@ -1,0 +1,44 @@
+---
+const preguntas = [
+  {
+    q: "¿Cuánto cuesta un sistema a la medida?",
+    a: "Depende del alcance, las integraciones y el tiempo de desarrollo. Después de una consulta inicial te enviamos una propuesta con costos y entregables claros.",
+  },
+  {
+    q: "¿Cuánto tiempo tarda un proyecto?",
+    a: "Desde unas semanas para soluciones acotadas hasta varios meses para sistemas más amplios. Trabajamos por entregas incrementales para que uses avances desde etapas tempranas.",
+  },
+  {
+    q: "¿El código y los datos son míos?",
+    a: "Sí. El sistema se construye para tu empresa y tú conservas el control de tu información y de tu solución.",
+  },
+  {
+    q: "¿Se puede integrar con los sistemas que ya uso?",
+    a: "En la mayoría de los casos sí: bases de datos, facturación, hojas de cálculo y servicios de terceros mediante APIs.",
+  },
+  {
+    q: "¿Ofrecen soporte después de la entrega?",
+    a: "Sí. Damos acompañamiento, corrección de errores y evolución del sistema conforme crece tu operación.",
+  },
+];
+---
+
+<section id="faq" class="scroll-mt-20 bg-white">
+  <div class="mx-auto max-w-3xl px-6 py-24 md:py-28">
+    <h2 class="reveal text-center text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
+      Preguntas frecuentes
+    </h2>
+
+    <div class="reveal mt-12">
+      {preguntas.map((p) => (
+        <details class="group border-b border-slate-200 py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-bold text-slate-900">
+            {p.q}
+            <span class="text-3xl font-light leading-none text-[#4687ff] transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-4 leading-relaxed text-slate-600">{p.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

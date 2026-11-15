@@ -1,0 +1,29 @@
+---
+const pasos = [
+  { titulo: "Diagnóstico", texto: "Entendemos tu operación, tus cuellos de botella y lo que realmente necesitas resolver." },
+  { titulo: "Diseño", texto: "Definimos alcance, arquitectura y prototipos contigo antes de escribir código." },
+  { titulo: "Desarrollo", texto: "Construimos por entregas incrementales para que veas avances reales con frecuencia." },
+  { titulo: "Entrega y soporte", texto: "Desplegamos, capacitamos a tu equipo y seguimos evolucionando el sistema contigo." },
+];
+---
+
+<section id="proceso" class="scroll-mt-20">
+  <div class="mx-auto max-w-7xl px-6 py-24 md:py-28">
+    <div class="reveal mx-auto max-w-3xl text-center">
+      <h2 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl">Cómo trabajamos</h2>
+      <p class="mt-5 text-lg text-slate-400">Un proceso claro, de la idea a producción.</p>
+    </div>
+
+    <ol class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {pasos.map((p, i) => (
+        <li class="reveal card-dark p-8">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#4687ff] text-lg font-extrabold text-white">
+            {i + 1}
+          </span>
+          <h3 class="mt-6 text-xl font-extrabold text-white">{p.titulo}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">{p.texto}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
