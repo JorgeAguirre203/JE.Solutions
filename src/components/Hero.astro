@@ -1,34 +1,86 @@
+---
+const bars = [38, 55, 44, 70, 62, 88];
+const filas = [
+  { texto: "Facturación sincronizada", estado: "Listo" },
+  { texto: "Inventario actualizado", estado: "Listo" },
+  { texto: "Reporte mensual generado", estado: "En curso" },
+];
+---
+
 <section class="relative overflow-hidden">
-  <div class="bg-grid absolute inset-0"></div>
-  <div class="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-blue-600/20 blur-[120px]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(70,135,255,0.28),transparent_55%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(70,135,255,0.12),transparent_50%)]"></div>
 
-  <div class="relative mx-auto max-w-6xl px-6 pb-28 pt-24 text-center md:pb-36 md:pt-32">
-    <span class="reveal inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium tracking-wide text-slate-300">
-      <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
-      Ingeniería de software a la medida
-    </span>
+  <div class="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2 lg:py-28">
+    <!-- Texto -->
+    <div>
+      <span class="reveal inline-flex items-center gap-2 rounded-full border border-[#4687ff]/40 bg-[#4687ff]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#8fb4ff]">
+        Ingeniería de software a la medida
+      </span>
 
-    <h1 class="reveal font-display mx-auto mt-8 max-w-4xl text-5xl leading-[1.05] text-white md:text-7xl">
-      Software diseñado para <em class="text-blue-400">cómo trabaja</em> tu empresa
-    </h1>
+      <h1 class="reveal mt-7 text-5xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl xl:text-7xl">
+        El software que tu empresa <span class="text-[#4687ff]">realmente necesita</span>
+      </h1>
 
-    <p class="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-400">
-      Reemplazamos hojas de cálculo y herramientas genéricas por sistemas rápidos, seguros y construidos exactamente para tu operación.
-    </p>
+      <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
+        Sistemas web, ERP, CRM y automatización construidos exactamente para tu operación. Rápidos, seguros y listos para crecer contigo.
+      </p>
 
-    <div class="reveal mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-      <a href="#contacto" class="rounded-full bg-blue-600 px-8 py-3.5 text-sm font-medium text-white transition hover:bg-blue-500">
-        Agendar consulta gratuita
-      </a>
-      <a href="#servicios" class="rounded-full border border-white/15 px-8 py-3.5 text-sm font-medium text-slate-200 transition hover:border-white/30 hover:text-white">
-        Ver soluciones
-      </a>
+      <div class="reveal mt-9 flex flex-col gap-4 sm:flex-row">
+        <a href="#contacto" class="btn-primary">Agendar consulta gratuita</a>
+        <a href="#plataforma" class="btn-secondary">Ver soluciones</a>
+      </div>
+
+      <ul class="reveal mt-9 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-slate-400">
+        {["Primera consulta sin costo", "Código y datos 100% tuyos", "Soporte después de la entrega"].map((t) => (
+          <li class="flex items-center gap-2">
+            <svg class="h-4 w-4 text-[#4687ff]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 011.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg>
+            {t}
+          </li>
+        ))}
+      </ul>
     </div>
 
-    <ul class="reveal mx-auto mt-20 grid max-w-3xl grid-cols-1 gap-6 border-t border-white/10 pt-10 text-sm text-slate-400 sm:grid-cols-3">
-      <li><span class="block text-white">100% a la medida</span>Sin plantillas ni licencias genéricas</li>
-      <li><span class="block text-white">Código y datos tuyos</span>Propiedad total de tu sistema</li>
-      <li><span class="block text-white">Acompañamiento continuo</span>Soporte y evolución después de la entrega</li>
-    </ul>
+    <!-- Maqueta de panel (ilustrativa) -->
+    <div class="reveal relative">
+      <div class="absolute -inset-6 rounded-[2.5rem] bg-[#4687ff]/20 blur-3xl"></div>
+      <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0b1530] shadow-2xl">
+        <div class="flex items-center gap-2 border-b border-white/10 px-5 py-3.5">
+          <span class="h-3 w-3 rounded-full bg-red-400/80"></span>
+          <span class="h-3 w-3 rounded-full bg-yellow-400/80"></span>
+          <span class="h-3 w-3 rounded-full bg-green-400/80"></span>
+          <span class="ml-3 text-xs font-medium text-slate-500">panel.tuempresa.com</span>
+        </div>
+
+        <div class="space-y-5 p-6">
+          <div class="grid grid-cols-3 gap-3">
+            {[["Pedidos", "1,284"], ["Facturado", "$482k"], ["Tareas auto.", "96%"]].map(([k, v]) => (
+              <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <p class="text-[11px] font-medium text-slate-400">{k}</p>
+                <p class="mt-1 text-xl font-extrabold text-white">{v}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+            <p class="text-xs font-semibold text-slate-400">Actividad semanal</p>
+            <div class="mt-4 flex h-28 items-end gap-3">
+              {bars.map((h) => (
+                <div class="flex-1 rounded-t-md bg-gradient-to-t from-[#2f6fe8] to-[#6b9fff]" style={`height:${h}%`}></div>
+              ))}
+            </div>
+          </div>
+
+          <ul class="space-y-2.5">
+            {filas.map((f) => (
+              <li class="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm">
+                <span class="font-medium text-slate-200">{f.texto}</span>
+                <span class="rounded-full bg-[#4687ff]/15 px-3 py-0.5 text-xs font-bold text-[#8fb4ff]">{f.estado}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
