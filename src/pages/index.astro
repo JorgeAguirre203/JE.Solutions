@@ -1,11 +1,111 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const servicios = [
+  {
+    titulo: "Sistemas Web a la Medida",
+    descripcion: "Desarrollamos plataformas administrativas, ERP y CRM adaptados al 100% al flujo de trabajo de tu empresa."
+  },
+  {
+    titulo: "Automatización de Procesos",
+    descripcion: "Eliminamos tareas manuales repetitivas conectando tus bases de datos, facturación y herramientas diarias."
+  },
+  {
+    titulo: "Aplicaciones y APIs",
+    descripcion: "Arquitecturas modernas, rápidas y seguras listas para escalar junto con el crecimiento de tu negocio."
+  }
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JESolutions | Ingeniería de Software a la Medida</title>
+  </head>
+
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased">
+    
+    <!-- NAVEGACIÓN -->
+    <header class="border-b border-slate-800/80 bg-slate-950/90 sticky top-0 z-50 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" class="text-xl font-bold tracking-tight text-white">
+          JE<span class="text-blue-500">Solutions</span>
+        </a>
+        <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+          <a href="#servicios" class="hover:text-white transition">Servicios</a>
+          <a href="#proceso" class="hover:text-white transition">Cómo trabajamos</a>
+          <a href="#contacto" class="hover:text-white transition">Contacto</a>
+        </nav>
+        <a href="#contacto" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+          Cotizar proyecto
+        </a>
+      </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL (HERO) -->
+    <main>
+      <section class="max-w-6xl mx-auto px-6 py-24 md:py-32 text-center">
+        <span class="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide uppercase mb-6">
+          Ingeniería de Software & Desarrollo
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+          Transformamos tus ideas en <span class="text-blue-500">sistemas a la medida</span> que impulsan tu empresa
+        </h1>
+        <p class="mt-6 text-lg text-slate-400 max-w-2xl mx-auto">
+          Dejamos atrás las hojas de cálculo desordenadas y el software genérico. Construimos herramientas rápidas, seguras y diseñadas exactamente para tu operación.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contacto" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-lg transition">
+            Agendar consulta gratuita
+          </a>
+          <a href="#servicios" class="border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-semibold px-8 py-3.5 rounded-lg transition">
+            Ver soluciones
+          </a>
+        </div>
+      </section>
+
+      <!-- SECCIÓN DE SERVICIOS -->
+      <section id="servicios" class="max-w-6xl mx-auto px-6 py-20 border-t border-slate-800/80">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-white">Nuestras Soluciones</h2>
+          <p class="mt-3 text-slate-400">Tecnología sólida construida para resolver problemas reales de negocio.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {servicios.map((item) => (
+            <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-blue-500/50 transition">
+              <div class="w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold mb-6">
+                ✓
+              </div>
+              <h3 class="text-xl font-semibold text-white mb-3">{item.titulo}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">{item.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- SECCIÓN DE CONTACTO -->
+      <section id="contacto" class="max-w-4xl mx-auto px-6 py-24 border-t border-slate-800/80 text-center">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12">
+          <h2 class="text-3xl font-bold text-white">¿Listo para optimizar tu negocio?</h2>
+          <p class="mt-4 text-slate-400 max-w-xl mx-auto">
+            Cuéntanos qué proceso quieres automatizar o qué sistema necesitas desarrollar y te enviaremos una propuesta técnica.
+          </p>
+          <div class="mt-8">
+            <a href="mailto:contacto@jesolutions.com" class="inline-block bg-white text-slate-950 hover:bg-slate-200 font-bold px-8 py-3.5 rounded-lg transition">
+              Enviar correo directo
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="border-t border-slate-800/80 py-8 text-center text-slate-500 text-sm">
+      <p>© 2026 JESolutions. Todos los derechos reservados.</p>
+    </footer>
+
+  </body>
+</html>
